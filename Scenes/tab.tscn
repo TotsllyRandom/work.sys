@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dd8io53j4qp0y"]
+
+[ext_resource type="Script" uid="uid://dk8oyvit5krfe" path="res://Scripts/tab.gd" id="1_3q41r"]
+[ext_resource type="Texture2D" uid="uid://dh5ajgg3klthg" path="res://Assets/Art/CloseTabButton.png" id="2_5vf03"]
+
+[node name="Tab" type="Control" unique_id=2023456386 groups=["tab"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3q41r")
+metadata/_edit_group_ = true
+
+[node name="Outline" type="ColorRect" parent="." unique_id=607128048]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="." unique_id=790538286]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0.9537712, 0.9537712, 0.95377105, 1)
+
+[node name="TopBar" type="ColorRect" parent="." unique_id=1642256643]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 30.0
+color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+
+[node name="Title" type="Label" parent="TopBar" unique_id=1999930172]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 25.0
+text = "test"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=872936334]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+
+[node name="CloseButton" type="Button" parent="." unique_id=408628820]
+layout_mode = 0
+offset_left = 449.0
+offset_right = 489.0
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("2_5vf03")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
+[connection signal="mouse_exited" from="Background" to="." method="_on_background_mouse_exited"]
+[connection signal="mouse_entered" from="TopBar" to="." method="_on_top_bar_mouse_entered"]
+[connection signal="mouse_exited" from="TopBar" to="." method="_on_top_bar_mouse_exited"]
+[connection signal="button_down" from="Button" to="." method="_on_focus_button_down"]
+[connection signal="pressed" from="Button" to="." method="_on_focus_button_pressed"]
+[connection signal="button_down" from="CloseButton" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="CloseButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CloseButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
