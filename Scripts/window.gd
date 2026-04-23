@@ -2,12 +2,17 @@ extends ColorRect
 
 @export var border_size = float(GlobalSettings.window_border_size)
 @export var tab_id: int
+@export var on_window: bool
+@export var on_bar: bool
+@export var on_button: bool
+
+signal move_to_top(z)
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	make_tab(1)
+	pass
 
 func make_tab(size_var) -> void:
 	match size_var:
@@ -38,8 +43,8 @@ func make_tab(size_var) -> void:
 		$TopBar/Border.scale.x = $TopBar/CloseButton.scale.x
 		$TopBar/Border.scale.y = $TopBar/CloseButton.scale.y
 	
-	$Content.size.y = size.y - border_size
-	$Content.position.y = border_size / 2
+	$Content.size.y = size.y - border_size - 30
+	$Content.position.y = border_size / 2 + 30
 	$Content.size.x = size.x - border_size
 	$Content.position.x = border_size / 2
 	if GlobalSettings.dark_mode:
@@ -54,6 +59,25 @@ func make_tab(size_var) -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if GlobalTab.current_top_tab == tab_id:
-		pass
+func _process(_delta: float) -> void:
+	$TopBar/Title.text = str(on_window)
+	if on_window and Input.is_mouse_button_pressed(1):
+		move_to_top.emit(z_index)
+
+
+func _on_mouse_entered() -> void:
+	on_window = true
+
+func _on_mouse_exited() -> void:
+	on_window = false
+
+
+func _on_top_bar_mouse_entered() -> void:
+	on_bar = true
+
+func _on_top_bar_mouse_exited() -> void:
+	on_bar = false
+
+
+func _on_close_button_pressed() -> void:
+	queue_free()

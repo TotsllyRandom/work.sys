@@ -2,22 +2,25 @@
 
 [ext_resource type="Script" uid="uid://b5cq63yqjexua" path="res://Scripts/window.gd" id="1_efths"]
 [ext_resource type="Texture2D" uid="uid://dh5ajgg3klthg" path="res://Assets/Art/CloseTabButton.png" id="2_0xhjo"]
+[ext_resource type="PackedScene" uid="uid://4285gbw5oqi2" path="res://Scenes/content.tscn" id="2_30sqi"]
 
-[node name="Window" type="ColorRect" unique_id=18979053]
+[node name="Window" type="ColorRect" unique_id=18979053 groups=["window"]]
 offset_right = 480.0
 offset_bottom = 340.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_efths")
+metadata/_edit_group_ = true
 
-[node name="Content" type="ColorRect" parent="." unique_id=1249016139]
+[node name="Content" parent="." unique_id=219593269 instance=ExtResource("2_30sqi")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 0.0
+offset_bottom = 310.0
 
 [node name="Border" type="ColorRect" parent="." unique_id=2013547776]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="TopBar" type="ColorRect" parent="." unique_id=1806127153]
@@ -30,6 +33,7 @@ color = Color(0.12941177, 0.13725491, 0.14901961, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="CloseButton" type="TextureButton" parent="TopBar" unique_id=803912634]
@@ -39,3 +43,15 @@ offset_bottom = 40.0
 scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("2_0xhjo")
 stretch_mode = 0
+
+[node name="Title" type="Label" parent="TopBar" unique_id=107955760]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 19.0
+mouse_filter = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TopBar" to="." method="_on_top_bar_mouse_entered"]
+[connection signal="mouse_exited" from="TopBar" to="." method="_on_top_bar_mouse_exited"]
+[connection signal="pressed" from="TopBar/CloseButton" to="." method="_on_close_button_pressed"]

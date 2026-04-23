@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://biift7qdvdqn5"]
+
+[ext_resource type="Script" uid="uid://caq5sr5fdi8b7" path="res://Scripts/desktop.gd" id="1_o1xxf"]
+[ext_resource type="PackedScene" uid="uid://coafm20ycrr2c" path="res://Scenes/window.tscn" id="2_wmsow"]
+
+[node name="Desktop" type="Control" unique_id=1407415409]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o1xxf")
+window_instance = ExtResource("2_wmsow")
