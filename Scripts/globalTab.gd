@@ -1,6 +1,5 @@
 extends Node
 
-var current_focus: int = -1
 var is_moving: bool = false
 var tab_moving: int = -1
 

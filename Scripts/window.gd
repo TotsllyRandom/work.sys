@@ -7,9 +7,8 @@ extends ColorRect
 @export var ID: int
 @export var layer: int
 
-signal move_to_top(z)
-
-
+var x_offset = 0
+var y_offset = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,8 +17,8 @@ func _ready() -> void:
 func make_tab(size_var) -> void:
 	match size_var:
 		1: #Normal Window
-			size.x = 480 + border_size
-			size.y = 340 + border_size
+			size.x = 410 + border_size
+			size.y = 290 + border_size
 			$TopBar/CloseButton.visible = true
 		2: #Vertical Window
 			size.x = 240 + border_size
@@ -62,15 +61,28 @@ func make_tab(size_var) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	#var papa = get_parent()
-	#papa.find_focus()
+	var papa = get_parent()
+	var mouse_pos = get_global_mouse_position()
+	
 	$TopBar/Title.text = str(on_window)
-	if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
-		move_to_top.emit(layer)
-
-func check():
-	if on_window or on_bar:
-		GlobalTab.current_focus = ID
+	if GlobalTab.is_moving == false:
+		if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
+			papa.move_child(self, papa.num_of_windows() - 1)
+			if on_bar:
+				GlobalTab.tab_moving = ID
+				GlobalTab.is_moving = true
+				x_offset = position.x - mouse_pos.x
+				y_offset = position.y - mouse_pos.y
+	
+	if GlobalTab.tab_moving == ID:
+		if not Input.is_mouse_button_pressed(1):
+			GlobalTab.tab_moving = 0
+			GlobalTab.is_moving = false
+		else:
+			position.x = mouse_pos.x + x_offset
+			position.y = mouse_pos.y + y_offset
+	
+	fix_position()
 
 func _on_mouse_entered() -> void:
 	on_window = true
@@ -88,3 +100,15 @@ func _on_top_bar_mouse_exited() -> void:
 
 func _on_close_button_pressed() -> void:
 	queue_free()
+
+func fix_position() -> void:
+	var screen_size = get_viewport_rect()
+	if position.x < 0:
+		position.x = 0
+	if position.x > screen_size.size.x - size.x:
+		position.x = screen_size.size.x - size.x
+	
+	if position.y < GlobalSettings.clock_bar_size:
+		position.y = GlobalSettings.clock_bar_size
+	if position.y > screen_size.size.y - size.y - GlobalSettings.toolbar_size:
+		position.y = screen_size.size.y - size.y - GlobalSettings.toolbar_size

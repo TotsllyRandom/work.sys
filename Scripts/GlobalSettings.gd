@@ -1,5 +1,8 @@
 extends Node
 
+var toolbar_size: int = 30
+var clock_bar_size: int = 20
+
 var window_border_size: int = 8
 
 var dark_mode: bool = false
