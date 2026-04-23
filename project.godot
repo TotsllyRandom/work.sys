@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Work.Sys"
-run/main_scene="uid://ddu01w43lck3x"
+run/main_scene="uid://coafm20ycrr2c"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+GlobalSettings="*uid://wwfg3i3r7ngv"
 GlobalTab="*uid://c0g27ym6enfva"
+
+[gui]
+
+theme/custom_font="uid://cku7urygnserk"
 
 [input]
 
