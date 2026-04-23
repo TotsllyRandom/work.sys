@@ -4,6 +4,7 @@ extends ColorRect
 @export var tab_id: int
 @export var on_window: bool
 @export var on_bar: bool
+@export var APP_ID: int = -1
 @export var ID: int
 @export var layer: int
 
@@ -13,6 +14,8 @@ var y_offset = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	name = "Window" + str(ID)
+	await APP_ID >= 0
+	$Content.build_app(APP_ID)
 
 func make_tab(size_var) -> void:
 	match size_var:
@@ -48,6 +51,11 @@ func make_tab(size_var) -> void:
 	$Content.size.x = size.x - border_size
 	$Content.position.x = border_size / 2
 	
+	$Border.size.y =  $TopBar.size.y + border_size
+	$Border.size.x = size.x
+	fix_window()
+
+func fix_window():
 	if GlobalSettings.dark_mode:
 		$Content.color = GlobalSettings.dark_mode_background
 		$TopBar.color = GlobalSettings.dark_mode_bar
@@ -55,8 +63,7 @@ func make_tab(size_var) -> void:
 		$Content.color = GlobalSettings.light_mode_background
 		$TopBar.color = GlobalSettings.light_mode_bar
 	
-	$Border.size.y =  $TopBar.size.y + border_size
-	$Border.size.x = size.x
+	fix_position()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,7 +71,8 @@ func _process(_delta: float) -> void:
 	var papa = get_parent()
 	var mouse_pos = get_global_mouse_position()
 	
-	$TopBar/Title.text = str(on_window)
+	
+	$TopBar/Title.text = GlobalTab.APP_NAMES[APP_ID]
 	if GlobalTab.is_moving == false:
 		if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
 			papa.move_child(self, papa.num_of_windows() - 1)
@@ -82,7 +90,7 @@ func _process(_delta: float) -> void:
 			position.x = mouse_pos.x + x_offset
 			position.y = mouse_pos.y + y_offset
 	
-	fix_position()
+	fix_window()
 
 func _on_mouse_entered() -> void:
 	on_window = true
@@ -102,13 +110,13 @@ func _on_close_button_pressed() -> void:
 	queue_free()
 
 func fix_position() -> void:
-	var screen_size = get_viewport_rect()
+	var screen_size = get_viewport_rect().size
 	if position.x < 0:
 		position.x = 0
-	if position.x > screen_size.size.x - size.x:
-		position.x = screen_size.size.x - size.x
+	if position.x > screen_size.x - size.x:
+		position.x = screen_size.x - size.x 
 	
 	if position.y < GlobalSettings.clock_bar_size:
 		position.y = GlobalSettings.clock_bar_size
-	if position.y > screen_size.size.y - size.y - GlobalSettings.toolbar_size:
-		position.y = screen_size.size.y - size.y - GlobalSettings.toolbar_size
+	if position.y > screen_size.y - size.y - GlobalSettings.toolbar_size:
+		position.y = screen_size.y - size.y - GlobalSettings.toolbar_size

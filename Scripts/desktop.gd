@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 		new.make_tab(randi_range(1,2))
 		new.position.x = randi_range(10,1152 - new.size.x - 10)
 		new.position.y = randi_range(10,648 - new.size.y - 10)
+		new.APP_ID = randi_range(0,2)
 		new.ID = num_of_windows() + 1
 		add_child(new)
 		
