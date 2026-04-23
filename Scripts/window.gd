@@ -4,7 +4,8 @@ extends ColorRect
 @export var tab_id: int
 @export var on_window: bool
 @export var on_bar: bool
-@export var on_button: bool
+@export var ID: int
+@export var layer: int
 
 signal move_to_top(z)
 
@@ -12,7 +13,7 @@ signal move_to_top(z)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	name = "Window" + str(ID)
 
 func make_tab(size_var) -> void:
 	match size_var:
@@ -47,6 +48,7 @@ func make_tab(size_var) -> void:
 	$Content.position.y = border_size / 2 + 30
 	$Content.size.x = size.x - border_size
 	$Content.position.x = border_size / 2
+	
 	if GlobalSettings.dark_mode:
 		$Content.color = GlobalSettings.dark_mode_background
 		$TopBar.color = GlobalSettings.dark_mode_bar
@@ -60,10 +62,15 @@ func make_tab(size_var) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#var papa = get_parent()
+	#papa.find_focus()
 	$TopBar/Title.text = str(on_window)
-	if on_window and Input.is_mouse_button_pressed(1):
-		move_to_top.emit(z_index)
+	if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
+		move_to_top.emit(layer)
 
+func check():
+	if on_window or on_bar:
+		GlobalTab.current_focus = ID
 
 func _on_mouse_entered() -> void:
 	on_window = true

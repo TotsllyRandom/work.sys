@@ -7,6 +7,7 @@
 [node name="Window" type="ColorRect" unique_id=18979053 groups=["window"]]
 offset_right = 480.0
 offset_bottom = 340.0
+mouse_force_pass_scroll_events = false
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_efths")
 metadata/_edit_group_ = true

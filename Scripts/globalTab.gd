@@ -1,6 +1,8 @@
 extends Node
 
-var current_top_tab: int = -1
+var current_focus: int = -1
+var is_moving: bool = false
+var tab_moving: int = -1
 
 var APP_NAMES = [
 	"Settings",
