@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dwf5onj1rnfqk"]
+
+[ext_resource type="Script" uid="uid://ccvn3fa8vjb11" path="res://Scripts/settingsScene.gd" id="1_mrfg0"]
+
+[node name="Settings" type="Control" unique_id=2029547655]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 900.0
+offset_bottom = 462.0
+script = ExtResource("1_mrfg0")
+
+[node name="DarkModeButton" type="CheckButton" parent="." unique_id=1061725984]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.82400006
+anchor_bottom = 0.73
+offset_right = -697.60004
+offset_bottom = -313.26
+
+[node name="Dark Mode" type="Label" parent="." unique_id=2091850653]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 19.0
+text = "Dark Mode Toggle"

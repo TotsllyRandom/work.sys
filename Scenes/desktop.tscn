@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://caq5sr5fdi8b7" path="res://Scripts/desktop.gd" id="1_o1xxf"]
 [ext_resource type="PackedScene" uid="uid://coafm20ycrr2c" path="res://Scenes/window.tscn" id="2_wmsow"]
+[ext_resource type="Texture2D" uid="uid://c3w4quv07maxb" path="res://Assets/Art/Desktop.png" id="3_wmsow"]
 
 [node name="Desktop" type="Control" unique_id=1407415409]
 layout_mode = 3
@@ -12,3 +13,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o1xxf")
 window_instance = ExtResource("2_wmsow")
+
+[node name="DesktopImage" type="TextureRect" parent="." unique_id=138567208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wmsow")
+
+[node name="ClockBar" type="ColorRect" parent="." unique_id=1808441208]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+color = Color(0.64398086, 0.64398086, 0.6439808, 1)
+
+[node name="Time" type="Label" parent="ClockBar" unique_id=48400561]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 2
+vertical_alignment = 1

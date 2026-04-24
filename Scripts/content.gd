@@ -9,15 +9,15 @@ func _ready() -> void:
 
 func build_app(id):
 	var scene: PackedScene
-	if load("res://Scenes/Apps/"+GlobalTab.APP_NAMES[id]+".tscn"):
-		scene = load("res://Scenes/Apps/"+GlobalTab.APP_NAMES[id]+".tscn")
+	if load("res://Scenes/Apps/"+GlobalTab.APP_NAMES[id]):
+		scene = load("res://Scenes/Apps/"+GlobalTab.APP_NAMES[id])
 	else:
-		scene
+		pass
 	#match id:
 	#	1:
-	#		new = SETTINGS_SCENE.instantiate()
+	var new = scene.instantiate()
 		
-	#add_child(new)
+	add_child(new)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

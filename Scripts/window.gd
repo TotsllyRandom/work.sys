@@ -77,7 +77,7 @@ func _process(_delta: float) -> void:
 	$TopBar/Title.text = GlobalTab.APP_NAMES[APP_ID]
 	if GlobalTab.is_moving == false:
 		if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
-			papa.move_child(self, papa.num_of_windows() - 1)
+			papa.move_child(self, papa.get_child_count() - 1)
 			if on_bar:
 				GlobalTab.tab_moving = ID
 				GlobalTab.is_moving = true

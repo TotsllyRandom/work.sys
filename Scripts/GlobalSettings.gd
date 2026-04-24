@@ -1,7 +1,7 @@
 extends Node
 
 var toolbar_size: int = 30
-var clock_bar_size: int = 20
+var clock_bar_size: int = 50
 
 var window_border_size: int = 8
 
