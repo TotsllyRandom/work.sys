@@ -20,12 +20,12 @@ func _ready() -> void:
 func make_tab(size_var) -> void:
 	match size_var:
 		1: #Normal Window
-			size.x = 410 + border_size
-			size.y = 290 + border_size
+			size.x = 900 + border_size
+			size.y = 500 + border_size
 			$TopBar/CloseButton.visible = true
 		2: #Vertical Window
-			size.x = 240 + border_size
-			size.y = 340 + border_size
+			size.x = 370 + border_size
+			size.y = 540 + border_size
 			$TopBar/CloseButton.visible = true
 		3: #Notification
 			size.x = 300 + border_size
@@ -35,6 +35,8 @@ func make_tab(size_var) -> void:
 	$TopBar.size.x = size.x - border_size
 	$TopBar.position.x = border_size / 2
 	$TopBar.position.y = border_size / 2
+	$TopBar/Title.position.x = border_size / 2
+	$TopBar/Title.size.y = 30
 	
 	if $TopBar/CloseButton.visible:
 		$TopBar/CloseButton.position.x = $TopBar.size.x - 30

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GlobalSettings="*uid://wwfg3i3r7ngv"
 GlobalTab="*uid://c0g27ym6enfva"
 
+[display]
+
+window/size/mode=3
+
 [gui]
 
 theme/custom_font="uid://cku7urygnserk"

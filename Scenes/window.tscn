@@ -48,8 +48,10 @@ stretch_mode = 0
 [node name="Title" type="Label" parent="TopBar" unique_id=107955760]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 19.0
+offset_bottom = 30.0
 mouse_filter = 1
+text = "Tab Name"
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

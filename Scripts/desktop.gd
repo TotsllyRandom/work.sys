@@ -21,10 +21,11 @@ func _process(_delta: float) -> void:
 	
 	#DEBUG new tab
 	if Input.is_action_just_pressed("test_new_tab"):
+		var screen_size = get_viewport_rect().size
 		var new = window_instance.instantiate()
 		new.make_tab(randi_range(1,2))
-		new.position.x = randi_range(10,1152 - new.size.x - 10)
-		new.position.y = randi_range(10,648 - new.size.y - 10)
+		new.position.x = randi_range(10,screen_size.x - new.size.x - 10)
+		new.position.y = randi_range(10,screen_size.y - new.size.y - 10)
 		new.APP_ID = randi_range(0,2)
 		new.ID = num_of_windows() + 1
 		add_child(new)
