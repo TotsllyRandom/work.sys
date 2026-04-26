@@ -4,21 +4,31 @@
 
 [node name="Settings" type="Control" unique_id=2029547655]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 900.0
-offset_bottom = 462.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_mrfg0")
 
 [node name="DarkModeButton" type="CheckButton" parent="." unique_id=1061725984]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.82400006
-anchor_bottom = 0.73
-offset_right = -697.60004
-offset_bottom = -313.26
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 20.0
+offset_bottom = 44.0
+grow_horizontal = 0
 
 [node name="Dark Mode" type="Label" parent="." unique_id=2091850653]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 19.0
+offset_left = 5.0
+offset_top = 20.0
+offset_right = 135.0
+offset_bottom = 39.0
 text = "Dark Mode Toggle"
+vertical_alignment = 1
+
+[connection signal="pressed" from="DarkModeButton" to="." method="_on_dark_mode_button_pressed"]

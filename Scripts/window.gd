@@ -73,8 +73,8 @@ func _process(_delta: float) -> void:
 	var papa = get_parent()
 	var mouse_pos = get_global_mouse_position()
 	
-	
-	$TopBar/Title.text = GlobalTab.APP_NAMES[APP_ID]
+	var content_kids = $Content.get_children()
+	$TopBar/Title.text = content_kids[0].name
 	if GlobalTab.is_moving == false:
 		if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
 			papa.move_child(self, papa.get_child_count() - 1)

@@ -5,12 +5,20 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fix_bars()
+
+func fix_bars():
 	$ClockBar.size.y = GlobalSettings.clock_bar_size
 	$ClockBar/Time.size.y = GlobalSettings.clock_bar_size
 	if GlobalSettings.dark_mode:
 		$ClockBar.color = GlobalSettings.dark_mode_background
+		$DesktopImage/Brightness.color = Color(0.0, 0.0, 0.0, 0.333)
+		$ClockBar/Time.add_theme_color_override("font_color", GlobalSettings.dark_mode_text)
 	else:
 		$ClockBar.color = GlobalSettings.light_mode_background
+		$DesktopImage/Brightness.color = Color(0.0, 0.0, 0.0, 0.0)
+		$ClockBar/Time.add_theme_color_override("font_color", GlobalSettings.light_mode_text)
+	
 	
 
 func num_of_windows() -> int:
@@ -45,4 +53,5 @@ func _process(_delta: float) -> void:
 		new.APP_ID = 0
 		new.ID = find_current_id()
 		add_child(new)
-		
+	
+	fix_bars()
