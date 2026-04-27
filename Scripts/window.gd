@@ -13,24 +13,13 @@ var y_offset = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	name = "Window" + str(ID)
 	await APP_ID >= 0
 	$Content.build_app(APP_ID)
 
 func make_tab(size_var) -> void:
-	match size_var:
-		1: #Normal Window
-			size.x = 900 + border_size
-			size.y = 500 + border_size
-			$TopBar/CloseButton.visible = true
-		2: #Vertical Window
-			size.x = 370 + border_size
-			size.y = 540 + border_size
-			$TopBar/CloseButton.visible = true
-		3: #Notification
-			size.x = 300 + border_size
-			size.y = 170 + border_size
-			$TopBar/CloseButton.visible = false
+	size.x = $Content.window_x + border_size
+	size.y = $Content.window_y + border_size
+	$TopBar/CloseButton.visible = $Content.has_close_button
 	
 	$TopBar.size.x = size.x - border_size
 	$TopBar.position.x = border_size / 2

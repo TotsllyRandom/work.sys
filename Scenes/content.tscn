@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4285gbw5oqi2"]
 
 [ext_resource type="Script" uid="uid://dwdr5smh12a0v" path="res://Scripts/content.gd" id="1_fy1iq"]
+[ext_resource type="PackedScene" uid="uid://bf5joacvy67n3" path="res://Scenes/Script Executors/text_color_manager.tscn" id="2_e3b8r"]
 
 [node name="Content" type="ColorRect" unique_id=219593269]
 offset_top = 30.0
@@ -8,3 +9,40 @@ offset_right = 480.0
 offset_bottom = 340.0
 mouse_filter = 1
 script = ExtResource("1_fy1iq")
+
+[node name="Settings" type="Control" parent="." unique_id=1023415067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings" unique_id=1358326047]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+
+[node name="DarkModeSettings" type="Control" parent="Settings/VBoxContainer" unique_id=718643830]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Button" type="CheckButton" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=817419343]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Dark Mode:"
+
+[node name="TextColorManager" parent="Settings/VBoxContainer/DarkModeSettings/Button" unique_id=161491578 instance=ExtResource("2_e3b8r")]
+
+[node name="VScrollBar" type="VScrollBar" parent="Settings/VBoxContainer" unique_id=52202370]
+layout_mode = 2
+
+[connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="." method="_on_button_pressed"]

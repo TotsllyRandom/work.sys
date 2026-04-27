@@ -13,11 +13,9 @@ func fix_bars():
 	if GlobalSettings.dark_mode:
 		$ClockBar.color = GlobalSettings.dark_mode_background
 		$DesktopImage/Brightness.color = Color(0.0, 0.0, 0.0, 0.333)
-		$ClockBar/Time.add_theme_color_override("font_color", GlobalSettings.dark_mode_text)
 	else:
 		$ClockBar.color = GlobalSettings.light_mode_background
 		$DesktopImage/Brightness.color = Color(0.0, 0.0, 0.0, 0.0)
-		$ClockBar/Time.add_theme_color_override("font_color", GlobalSettings.light_mode_text)
 	
 	
 
@@ -47,10 +45,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_new_tab"):
 		var screen_size = get_viewport_rect().size
 		var new = window_instance.instantiate()
-		new.make_tab(randi_range(1,2))
-		new.position.x = randi_range(10,screen_size.x - new.size.x - 10)
-		new.position.y = randi_range(10,screen_size.y - new.size.y - 10)
-		new.APP_ID = 0
+		new.position.x = randi_range(10,screen_size.x - 10)
+		new.position.y = randi_range(10,screen_size.y - 10)
+		new.APP_ID = randi_range(0,GlobalTab.APP_NAMES.size()-1)
 		new.ID = find_current_id()
 		add_child(new)
 	

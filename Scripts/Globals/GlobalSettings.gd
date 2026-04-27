@@ -3,7 +3,7 @@ extends Node
 var toolbar_size: int = 30
 var clock_bar_size: int = 50
 
-var window_border_size: int = 16
+var window_border_size: int = 8
 
 var dark_mode: bool = false
 var light_mode_background: Color = Color(0.932, 0.932, 0.932, 1.0)
