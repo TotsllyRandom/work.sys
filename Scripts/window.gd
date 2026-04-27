@@ -4,7 +4,7 @@ extends ColorRect
 @export var tab_id: int
 @export var on_window: bool
 @export var on_bar: bool
-@export var APP_ID: int = -1
+@export var APP_ID: String = ""
 @export var ID: int
 @export var layer: int
 
@@ -13,7 +13,7 @@ var y_offset = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await APP_ID >= 0
+	await APP_ID != ""
 	$Content.build_app(APP_ID)
 
 func make_tab(size_var) -> void:

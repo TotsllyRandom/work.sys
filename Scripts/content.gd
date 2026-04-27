@@ -5,10 +5,19 @@ signal ready_to_make
 var window_x: int
 var window_y: int
 var has_close_button: bool
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	await get_tree().process_frame
+	make_app_list()
+
+func make_app_list():
+	GlobalTab.APP_NAMES.clear()
+	for child in get_children():
+		GlobalTab.APP_NAMES.append(child.name)
+	print(GlobalTab.APP_NAMES)
+
+
+
 
 func build_app(id):
 	if get_children().has(id):
