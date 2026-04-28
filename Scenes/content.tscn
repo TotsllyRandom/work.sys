@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dwdr5smh12a0v" path="res://Scripts/content.gd" id="1_fy1iq"]
 [ext_resource type="PackedScene" uid="uid://bf5joacvy67n3" path="res://Scenes/Script Executors/text_color_manager.tscn" id="2_e3b8r"]
+[ext_resource type="Script" uid="uid://bivegnrrl7wcv" path="res://Scripts/App Scripts/settings.gd" id="2_wcxcf"]
 
 [node name="Content" type="ColorRect" unique_id=219593269]
 offset_top = 30.0
 offset_right = 480.0
 offset_bottom = 340.0
 mouse_filter = 1
+color = Color(0.24658787, 0.2465879, 0.24658787, 1)
 script = ExtResource("1_fy1iq")
 
 [node name="Settings" type="Control" parent="." unique_id=1023415067]
@@ -18,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("2_wcxcf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings" unique_id=1358326047]
 layout_mode = 1
@@ -41,6 +44,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+shortcut_feedback = false
+shortcut_in_tooltip = false
 
 [node name="Label" type="Label" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=875446846]
 layout_mode = 1
@@ -78,4 +83,4 @@ vertical_alignment = 1
 
 [node name="TextColorManager" parent="Error/Label" unique_id=1085503394 instance=ExtResource("2_e3b8r")]
 
-[connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_dark_mode_button_pressed"]
