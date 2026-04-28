@@ -4,7 +4,7 @@ extends ColorRect
 @export var tab_id: int
 @export var on_window: bool
 @export var on_bar: bool
-@export var APP_ID: String = ""
+@export var APP_ID: String
 @export var ID: int
 @export var layer: int
 
@@ -13,12 +13,11 @@ var y_offset = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await APP_ID != ""
-	$Content.build_app(APP_ID)
+	pass
 
-func make_tab(size_var) -> void:
+func make_tab() -> void:
 	size.x = $Content.window_x + border_size
-	size.y = $Content.window_y + border_size
+	size.y = $Content.window_y + border_size + 30 + border_size / 2
 	$TopBar/CloseButton.visible = $Content.has_close_button
 	
 	$TopBar.size.x = size.x - border_size
@@ -27,6 +26,7 @@ func make_tab(size_var) -> void:
 	$TopBar/Title.position.x = border_size / 2
 	$TopBar/Title.size.y = 30
 	
+	$TopBar/Border.visible = $TopBar/CloseButton.visible
 	if $TopBar/CloseButton.visible:
 		$TopBar/CloseButton.position.x = $TopBar.size.x - 30
 		
@@ -61,9 +61,8 @@ func fix_window():
 func _process(_delta: float) -> void:
 	var papa = get_parent()
 	var mouse_pos = get_global_mouse_position()
-	
-	var content_kids = $Content.get_children()
-	$TopBar/Title.text = content_kids[0].name
+
+	$TopBar/Title.text = $Content.window_name
 	if GlobalTab.is_moving == false:
 		if (on_window or on_bar) and Input.is_mouse_button_pressed(1):
 			papa.move_child(self, papa.get_child_count() - 1)

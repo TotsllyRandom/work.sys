@@ -3,7 +3,7 @@ extends Node
 var is_moving: bool = false
 var tab_moving: int = -1
 
-var APP_NAMES = []
+var APP_NAMES = ["Settings"]
 
 
 

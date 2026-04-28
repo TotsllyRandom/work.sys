@@ -17,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings" unique_id=1358326047]
 layout_mode = 1
@@ -28,6 +29,7 @@ grow_horizontal = 2
 [node name="DarkModeSettings" type="Control" parent="Settings/VBoxContainer" unique_id=718643830]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Button" type="CheckButton" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=817419343]
 custom_minimum_size = Vector2(0, 30)
@@ -37,12 +39,43 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Dark Mode:"
 
-[node name="TextColorManager" parent="Settings/VBoxContainer/DarkModeSettings/Button" unique_id=161491578 instance=ExtResource("2_e3b8r")]
+[node name="Label" type="Label" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=875446846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dark Mode"
+vertical_alignment = 1
 
-[node name="VScrollBar" type="VScrollBar" parent="Settings/VBoxContainer" unique_id=52202370]
-layout_mode = 2
+[node name="TextColorManager" parent="Settings/VBoxContainer/DarkModeSettings/Label" unique_id=161491578 instance=ExtResource("2_e3b8r")]
+
+[node name="Error" type="Control" parent="." unique_id=647410379]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="Error" unique_id=2111190660]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "An error occured. Please try again later."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextColorManager" parent="Error/Label" unique_id=1085503394 instance=ExtResource("2_e3b8r")]
 
 [connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="." method="_on_button_pressed"]

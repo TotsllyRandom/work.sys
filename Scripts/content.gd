@@ -2,41 +2,48 @@ extends ColorRect
 
 signal ready_to_make
 
+@export var window_name: String
+
 var window_x: int
 var window_y: int
 var has_close_button: bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().process_frame
-	make_app_list()
+	window_name = get_parent().APP_ID
+	build_app(window_name)
 
-func make_app_list():
-	GlobalTab.APP_NAMES.clear()
+
+func has_child_named(name: String) -> bool:
 	for child in get_children():
-		GlobalTab.APP_NAMES.append(child.name)
-	print(GlobalTab.APP_NAMES)
+		if child.name == name:
+			return true
+	return false
 
-
-
-
-func build_app(id):
-	if get_children().has(id):
-		hide_children(id)
-	else:
-		hide_children("Error")
+func build_app(id: String):
+	print("Making new window:")
+	print("ID: '", id, "'")
+	print("APP_NAMES: ", GlobalTab.APP_NAMES)
+	if !(GlobalTab.APP_NAMES.has(id)):
+		id = "Error"
+	hide_children(id)
+	print("Final ID: ", id)
+	print("")
 	
 	match id:
 		"Settings":
 			window_x = 900
 			window_y = 500
 			has_close_button = true
+		_:
+			window_x = 500
+			window_y = 300
+			has_close_button = false
+	get_parent().make_tab()
 
 func hide_children(keep):
 	for child in get_children():
-		if child.name != keep:
-			child.visible = false
-		else:
-			child.visible = true
+		child.visible = (child.name == keep)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

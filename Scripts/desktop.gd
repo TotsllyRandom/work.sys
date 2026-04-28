@@ -47,8 +47,8 @@ func _process(_delta: float) -> void:
 		var new = window_instance.instantiate()
 		new.position.x = randi_range(10,screen_size.x - 10)
 		new.position.y = randi_range(10,screen_size.y - 10)
-		new.APP_ID = randi_range(0,GlobalTab.APP_NAMES.size()-1)
 		new.ID = find_current_id()
+		new.APP_ID = "Settings"
 		add_child(new)
 	
 	fix_bars()
