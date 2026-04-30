@@ -82,4 +82,5 @@ vertical_alignment = 1
 
 [node name="TextColorManager" parent="Error/Label" unique_id=1085503394 instance=ExtResource("2_e3b8r")]
 
-[connection signal="toggled" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_toggled"]
+[connection signal="button_up" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_up"]
+[connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_pressed"]
