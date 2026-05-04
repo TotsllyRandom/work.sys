@@ -15,9 +15,5 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	pass
-
-
-func _on_button_up() -> void:
 	print("toggling from tab id ", get_parent().get_parent().ID)
-	#GlobalSettings.dark_mode = button.button_pressed
+	GlobalSettings.dark_mode = button.button_pressed

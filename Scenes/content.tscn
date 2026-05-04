@@ -13,6 +13,7 @@ color = Color(0.24658787, 0.2465879, 0.24658787, 1)
 script = ExtResource("1_fy1iq")
 
 [node name="Settings" type="Control" parent="." unique_id=1023415067]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,18 +35,6 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Button" type="CheckButton" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=817419343]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-button_pressed = true
-
 [node name="Label" type="Label" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=875446846]
 layout_mode = 1
 anchors_preset = 15
@@ -59,6 +48,17 @@ text = "Dark Mode"
 vertical_alignment = 1
 
 [node name="TextColorManager" parent="Settings/VBoxContainer/DarkModeSettings/Label" unique_id=161491578 instance=ExtResource("2_e3b8r")]
+
+[node name="Button" type="CheckButton" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=1180055315]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
 
 [node name="Error" type="Control" parent="." unique_id=647410379]
 visible = false
@@ -82,5 +82,4 @@ vertical_alignment = 1
 
 [node name="TextColorManager" parent="Error/Label" unique_id=1085503394 instance=ExtResource("2_e3b8r")]
 
-[connection signal="button_up" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_up"]
 [connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_pressed"]
