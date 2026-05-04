@@ -21,19 +21,18 @@ func has_child_named(name: String) -> bool:
 	return false
 
 func build_app(id: String):
-	print("Making new window:")
-	print("ID: '", id, "'")
-	print("APP_NAMES: ", GlobalTab.APP_NAMES)
 	if !(GlobalTab.APP_NAMES.has(id)):
 		id = "Error"
 	hide_children(id)
-	print("Final ID: ", id)
-	print("")
 	
 	match id:
 		"Settings":
 			window_x = 900
 			window_y = 500
+			has_close_button = true
+		"Quickloans - Account Manager":
+			window_x = 800
+			window_y = 460
 			has_close_button = true
 		_:
 			window_x = 500

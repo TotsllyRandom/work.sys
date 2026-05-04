@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 		new.position.x = randi_range(10,screen_size.x - 10)
 		new.position.y = randi_range(10,screen_size.y - 10)
 		new.ID = find_current_id()
-		new.APP_ID = "Settings"
+		new.APP_ID = GlobalTab.APP_NAMES[randi_range(0,GlobalTab.APP_NAMES.size()-1)]
 		add_child(new)
 	
 	fix_bars()

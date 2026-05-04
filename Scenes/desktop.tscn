@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://caq5sr5fdi8b7" path="res://Scripts/desktop.gd" id="1_o1xxf"]
 [ext_resource type="PackedScene" uid="uid://coafm20ycrr2c" path="res://Scenes/window.tscn" id="2_wmsow"]
-[ext_resource type="Texture2D" uid="uid://c3w4quv07maxb" path="res://Assets/Art/Desktop.png" id="3_wmsow"]
+[ext_resource type="Texture2D" uid="uid://c3w4quv07maxb" path="res://Mods/Desktop Images/Desktop.png" id="3_wmsow"]
 [ext_resource type="PackedScene" uid="uid://bf5joacvy67n3" path="res://Scenes/Script Executors/text_color_manager.tscn" id="4_mcvbk"]
 
 [node name="Desktop" type="Control" unique_id=1407415409]

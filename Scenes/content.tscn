@@ -82,4 +82,14 @@ vertical_alignment = 1
 
 [node name="TextColorManager" parent="Error/Label" unique_id=1085503394 instance=ExtResource("2_e3b8r")]
 
+[node name="Quickloans - Account Manager" type="Control" parent="." unique_id=399752108]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quickloans - Loan Front" type="Control" parent="." unique_id=2025639367]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_pressed"]
