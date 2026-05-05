@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bkgc2oxpb8kfk"
-path="res://.godot/imported/ArialMdm.ttf-c1ee32df222eec35b2c48681ec2d06fe.fontdata"
+uid="uid://b8mtx4o1cmwjr"
+path="res://.godot/imported/ARIALBLACKITALIC.TTF-122e9b42930e32a38aab4e04ba586cb3.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/arial/ArialMdm.ttf"
-dest_files=["res://.godot/imported/ArialMdm.ttf-c1ee32df222eec35b2c48681ec2d06fe.fontdata"]
+source_file="res://Mods/Fonts/arial/ARIALBLACKITALIC.TTF"
+dest_files=["res://.godot/imported/ARIALBLACKITALIC.TTF-122e9b42930e32a38aab4e04ba586cb3.fontdata"]
 
 [params]
 

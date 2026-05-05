@@ -6,6 +6,7 @@ var button
 func _ready() -> void:
 	button = $VBoxContainer/DarkModeSettings/Button
 	button.button_pressed = GlobalSettings.dark_mode
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

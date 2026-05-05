@@ -34,6 +34,10 @@ func build_app(id: String):
 			window_x = 800
 			window_y = 460
 			has_close_button = true
+		"Quickloans - Loan Front":
+			window_x = 1000
+			window_y = 600
+			has_close_button = true
 		_:
 			window_x = 500
 			window_y = 300

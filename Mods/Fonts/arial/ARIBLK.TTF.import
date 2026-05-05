@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cwiql7ih8iw8e"
-path="res://.godot/imported/ARIALBD 1.TTF-c1ef6a4a9dd5f6c27680539640318b9e.fontdata"
+uid="uid://b2w854p382vua"
+path="res://.godot/imported/ARIBLK.TTF-a40129b5d3e5acc370165119f591c4cb.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/arial/ARIALBD 1.TTF"
-dest_files=["res://.godot/imported/ARIALBD 1.TTF-c1ef6a4a9dd5f6c27680539640318b9e.fontdata"]
+source_file="res://Mods/Fonts/arial/ARIBLK.TTF"
+dest_files=["res://.godot/imported/ARIBLK.TTF-a40129b5d3e5acc370165119f591c4cb.fontdata"]
 
 [params]
 

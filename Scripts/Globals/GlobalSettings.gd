@@ -5,7 +5,9 @@ var clock_bar_size: int = 50
 
 var window_border_size: int = 8
 
-var dark_mode = false
+var global_text_add: int = 0
+
+var dark_mode: bool = false
 var light_mode_background: Color = Color(0.932, 0.932, 0.932, 1.0)
 var light_mode_bar: Color = Color(0.464, 0.464, 0.464, 1.0)
 var light_mode_text: Color = Color(0.0, 0.0, 0.0, 1.0)

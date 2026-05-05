@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://iwynalmux2nl"
-path="res://.godot/imported/ArialCEMTBlack.ttf-dd762ff4dbb16aeff7c8f2adccfcc555.fontdata"
+uid="uid://cwiql7ih8iw8e"
+path="res://.godot/imported/ARIALBD 1.TTF-db275e37acef71a2570717f8d123f1e9.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/arial/ArialCEMTBlack.ttf"
-dest_files=["res://.godot/imported/ArialCEMTBlack.ttf-dd762ff4dbb16aeff7c8f2adccfcc555.fontdata"]
+source_file="res://Mods/Fonts/arial/ARIALBD 1.TTF"
+dest_files=["res://.godot/imported/ARIALBD 1.TTF-db275e37acef71a2570717f8d123f1e9.fontdata"]
 
 [params]
 

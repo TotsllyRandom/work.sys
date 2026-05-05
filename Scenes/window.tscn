@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh5ajgg3klthg" path="res://Assets/Art/CloseTabButton.png" id="2_0xhjo"]
 [ext_resource type="PackedScene" uid="uid://4285gbw5oqi2" path="res://Scenes/content.tscn" id="2_30sqi"]
 [ext_resource type="PackedScene" uid="uid://bf5joacvy67n3" path="res://Scenes/Script Executors/text_color_manager.tscn" id="4_0slyu"]
+[ext_resource type="PackedScene" uid="uid://bx8nuc47vaj3h" path="res://Scenes/Script Executors/text_size_manager.tscn" id="5_gvfsm"]
 
 [node name="Window" type="ColorRect" unique_id=18979053 groups=["window"]]
 offset_right = 480.0
@@ -55,6 +56,8 @@ theme_override_font_sizes/font_size = 28
 text = "tagline"
 
 [node name="TextColorManager" parent="TopBar/Title" unique_id=161491578 instance=ExtResource("4_0slyu")]
+
+[node name="TextSizeManager" parent="TopBar/Title" unique_id=646512566 instance=ExtResource("5_gvfsm")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

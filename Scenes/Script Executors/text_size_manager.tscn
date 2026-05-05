@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bx8nuc47vaj3h"]
+
+[ext_resource type="Script" uid="uid://bjkeqlkfwbvtr" path="res://Scripts/text_size_manager.gd" id="1_y23wi"]
+
+[node name="TextSizeManager" type="Node" unique_id=646512566]
+script = ExtResource("1_y23wi")
+
+[node name="Label" type="Label" parent="." unique_id=517001980]
+offset_right = 40.0
+offset_bottom = 19.0
