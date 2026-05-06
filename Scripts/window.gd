@@ -1,4 +1,4 @@
-extends ColorRect
+extends Panel
 
 @export var border_size = float(GlobalSettings.window_border_size)
 @export var tab_id: int
