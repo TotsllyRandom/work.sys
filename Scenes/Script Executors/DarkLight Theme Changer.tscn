@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://by8ecrwrlyxc4"]
+
+[ext_resource type="Script" uid="uid://crb7e2scaxc0r" path="res://Scenes/Script Executors/dark_light_theme_changer.gd" id="1_mv1g8"]
+
+[node name="DarkLightThemeChanger" type="Node" unique_id=386370308]
+script = ExtResource("1_mv1g8")

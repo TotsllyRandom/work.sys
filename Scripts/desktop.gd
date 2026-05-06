@@ -11,10 +11,8 @@ func fix_bars():
 	$ClockBar.size.y = GlobalSettings.clock_bar_size
 	$ClockBar/Time.size.y = GlobalSettings.clock_bar_size
 	if GlobalSettings.dark_mode:
-		$ClockBar.color = GlobalSettings.dark_mode_background
 		$DesktopImage/Brightness.color = Color(0.0, 0.0, 0.0, 0.333)
 	else:
-		$ClockBar.color = GlobalSettings.light_mode_background
 		$DesktopImage/Brightness.color = Color(0.0, 0.0, 0.0, 0.0)
 	
 	

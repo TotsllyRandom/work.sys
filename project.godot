@@ -24,6 +24,10 @@ GlobalTab="*uid://c0g27ym6enfva"
 
 window/size/mode=3
 
+[global_group]
+
+window=""
+
 [gui]
 
 theme/custom_font="uid://cku7urygnserk"

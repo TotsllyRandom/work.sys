@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://4285gbw5oqi2"]
 
 [ext_resource type="Script" uid="uid://dwdr5smh12a0v" path="res://Scripts/content.gd" id="1_fy1iq"]
-[ext_resource type="Theme" uid="uid://ddl4v5fig2eai" path="res://Mods/Themes/System.tres" id="2_51eih"]
-[ext_resource type="PackedScene" uid="uid://bf5joacvy67n3" path="res://Scenes/Script Executors/text_color_manager.tscn" id="2_e3b8r"]
+[ext_resource type="Theme" uid="uid://ddl4v5fig2eai" path="res://Mods/Themes/BarDark.tres" id="2_51eih"]
 [ext_resource type="Script" uid="uid://bivegnrrl7wcv" path="res://Scripts/App Scripts/settings.gd" id="2_wcxcf"]
-[ext_resource type="PackedScene" uid="uid://bx8nuc47vaj3h" path="res://Scenes/Script Executors/text_size_manager.tscn" id="4_7skcx"]
 
 [node name="Content" type="ColorRect" unique_id=219593269]
 offset_top = 30.0
@@ -51,8 +49,6 @@ grow_vertical = 2
 text = "Dark Mode"
 vertical_alignment = 1
 
-[node name="TextColorManager" parent="Settings/VBoxContainer/DarkModeSettings/Label" unique_id=161491578 instance=ExtResource("2_e3b8r")]
-
 [node name="Button" type="CheckButton" parent="Settings/VBoxContainer/DarkModeSettings" unique_id=1180055315]
 layout_mode = 1
 anchors_preset = 11
@@ -82,10 +78,6 @@ grow_vertical = 2
 text = "Text Size"
 vertical_alignment = 1
 
-[node name="TextColorManager" parent="Settings/VBoxContainer/TextSizeSettings/Label" unique_id=1649771827 instance=ExtResource("2_e3b8r")]
-
-[node name="TextSizeManager" parent="Settings/VBoxContainer/TextSizeSettings/Label" unique_id=646512566 instance=ExtResource("4_7skcx")]
-
 [node name="MenuButton" type="MenuButton" parent="Settings/VBoxContainer/TextSizeSettings" unique_id=596171169]
 layout_mode = 1
 anchors_preset = 11
@@ -110,10 +102,6 @@ popup/item_2/text = "Large"
 popup/item_2/checkable = 1
 popup/item_2/id = 3
 
-[node name="TextSizeManager" parent="Settings/VBoxContainer/TextSizeSettings/MenuButton" unique_id=1465204839 instance=ExtResource("4_7skcx")]
-
-[node name="TextColorManager" parent="Settings/VBoxContainer/TextSizeSettings/MenuButton" unique_id=1539417306 instance=ExtResource("2_e3b8r")]
-
 [node name="Error" type="Control" parent="." unique_id=647410379]
 visible = false
 layout_mode = 1
@@ -133,10 +121,6 @@ grow_horizontal = 2
 text = "An error occured. Please try again later."
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TextColorManager" parent="Error/Label" unique_id=1085503394 instance=ExtResource("2_e3b8r")]
-
-[node name="TextSizeManager" parent="Error/Label" unique_id=341727015 instance=ExtResource("4_7skcx")]
 
 [node name="Quickloans - Account Manager" type="Control" parent="." unique_id=399752108]
 anchors_preset = 0

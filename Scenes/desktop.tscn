@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://biift7qdvdqn5"]
 
+[ext_resource type="Theme" uid="uid://ddl4v5fig2eai" path="res://Mods/Themes/BarDark.tres" id="1_mcvbk"]
 [ext_resource type="Script" uid="uid://caq5sr5fdi8b7" path="res://Scripts/desktop.gd" id="1_o1xxf"]
 [ext_resource type="PackedScene" uid="uid://coafm20ycrr2c" path="res://Scenes/window.tscn" id="2_wmsow"]
 [ext_resource type="Texture2D" uid="uid://c3w4quv07maxb" path="res://Mods/Desktop Images/Desktop.png" id="3_wmsow"]
-[ext_resource type="PackedScene" uid="uid://bf5joacvy67n3" path="res://Scenes/Script Executors/text_color_manager.tscn" id="4_mcvbk"]
-[ext_resource type="PackedScene" uid="uid://bx8nuc47vaj3h" path="res://Scenes/Script Executors/text_size_manager.tscn" id="5_e8lo5"]
 
 [node name="Desktop" type="Control" unique_id=1407415409]
 layout_mode = 3
@@ -13,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_mcvbk")
 script = ExtResource("1_o1xxf")
 window_instance = ExtResource("2_wmsow")
 
@@ -34,23 +34,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="ClockBar" type="ColorRect" parent="." unique_id=1808441208]
+[node name="ClockBar" type="Panel" parent="." unique_id=681243891]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 50.0
 grow_horizontal = 2
-color = Color(0.64398086, 0.64398086, 0.6439808, 1)
 
 [node name="Time" type="Label" parent="ClockBar" unique_id=48400561]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 19.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+offset_bottom = 36.0
 horizontal_alignment = 2
 vertical_alignment = 1
-
-[node name="TextColorManager" parent="ClockBar/Time" unique_id=161491578 instance=ExtResource("4_mcvbk")]
-
-[node name="TextSizeManager" parent="ClockBar/Time" unique_id=646512566 instance=ExtResource("5_e8lo5")]

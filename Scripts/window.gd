@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 @export var border_size = float(GlobalSettings.window_border_size)
 @export var tab_id: int
@@ -16,46 +16,16 @@ func _ready() -> void:
 	pass
 
 func make_tab() -> void:
-	size.x = $Content.window_x + border_size
-	size.y = $Content.window_y + border_size + 30 + border_size / 2
+	size.x = $Content.window_x
+	size.y = $Content.window_y + 40
 	$TopBar/CloseButton.visible = $Content.has_close_button
 	
-	$TopBar.size.x = size.x - border_size
-	$TopBar.position.x = border_size / 2
-	$TopBar.position.y = border_size / 2
-	$TopBar/Title.position.x = border_size / 2
-	$TopBar/Title.size.y = 30
-	
-	$TopBar/Border.visible = $TopBar/CloseButton.visible
-	if $TopBar/CloseButton.visible:
-		$TopBar/CloseButton.position.x = $TopBar.size.x - 30
-		
-		$TopBar/Border.position.x = $TopBar/CloseButton.position.x - border_size / 2
-		$TopBar/Border.position.y = $TopBar/CloseButton.position.y - border_size / 2
-		$TopBar/Border.size.x = $TopBar/CloseButton.size.x + border_size
-		$TopBar/Border.size.y = $TopBar/CloseButton.size.y + border_size
-		$TopBar/Border.scale.x = $TopBar/CloseButton.scale.x
-		$TopBar/Border.scale.y = $TopBar/CloseButton.scale.y
-	
-	$Content.size.y = size.y - border_size - 30
-	$Content.position.y = border_size / 2 + 30
-	$Content.size.x = size.x - border_size
-	$Content.position.x = border_size / 2
-	
-	$Border.size.y =  $TopBar.size.y + border_size
-	$Border.size.x = size.x
+	$TopBar/Title.size.y = 40
+	$Content.position.y = 40
 	fix_window()
 
 func fix_window():
-	if GlobalSettings.dark_mode:
-		$Content.color = GlobalSettings.dark_mode_background
-		$TopBar.color = GlobalSettings.dark_mode_bar
-	else:
-		$Content.color = GlobalSettings.light_mode_background
-		$TopBar.color = GlobalSettings.light_mode_bar
-	
 	fix_position()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
