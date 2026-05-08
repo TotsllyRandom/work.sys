@@ -106,6 +106,7 @@ popup/item_2/checkable = 1
 popup/item_2/id = 3
 
 [node name="Error" type="Control" parent="." unique_id=647410379]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,13 +145,55 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e3b8r")
 text = "Close"
 
 [node name="Quickloans - Account Manager" type="Control" parent="." unique_id=399752108]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top Buttons" type="Control" parent="Quickloans - Account Manager" unique_id=112746823]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=721852312]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 160.0
+grow_vertical = 2
+text = "Home"
+
+[node name="Button2" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=1103917856]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Statistics"
+
+[node name="Button3" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=27518316]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 50.0
+grow_horizontal = 2
+text = "Rules"
 
 [node name="Quickloans - Loan Front" type="Control" parent="." unique_id=2025639367]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_pressed"]
