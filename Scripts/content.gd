@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 signal ready_to_make
 
@@ -46,7 +46,8 @@ func build_app(id: String):
 
 func hide_children(keep):
 	for child in get_children():
-		child.visible = (child.name == keep)
+		if !child.is_in_group("HideChildrenExempt"):
+			child.visible = (child.name == keep)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

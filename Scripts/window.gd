@@ -17,11 +17,11 @@ func _ready() -> void:
 
 func make_tab() -> void:
 	size.x = $Content.window_x
-	size.y = $Content.window_y + 40
+	size.y = $Content.window_y + 34
 	$TopBar/CloseButton.visible = $Content.has_close_button
 	
 	$TopBar/Title.size.y = 40
-	$Content.position.y = 40
+	$Content.position.y = 34
 	fix_window()
 
 func fix_window():
