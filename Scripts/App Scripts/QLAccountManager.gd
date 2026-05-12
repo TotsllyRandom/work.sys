@@ -22,6 +22,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func update_rules():
+	var rl = rs.get_child(0)
+	rl.text = ""
+
 func fix():
 	match current_screen:
 		1:

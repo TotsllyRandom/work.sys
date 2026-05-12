@@ -146,6 +146,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e3b8r")
 text = "Close"
 
 [node name="Quickloans - Account Manager" type="Control" parent="." unique_id=399752108]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -193,6 +194,7 @@ text = "Rules"
 metadata/_edit_use_anchors_ = true
 
 [node name="Home" type="Control" parent="Quickloans - Account Manager" unique_id=554841953]
+visible = false
 anchors_preset = 0
 anchor_left = 0.0125
 anchor_top = 0.16129032
@@ -221,6 +223,7 @@ offset_bottom = 19.0
 text = "Rules Menu"
 
 [node name="Stats" type="Control" parent="Quickloans - Account Manager" unique_id=1652446943]
+visible = false
 anchors_preset = 0
 anchor_left = 0.0125
 anchor_top = 0.16129032
@@ -239,6 +242,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 
