@@ -70,7 +70,7 @@ grow_vertical = 2
 text = "Page Title"
 vertical_alignment = 1
 
-[node name="DarkLightThemeChanger" parent="." unique_id=386370308 instance=ExtResource("4_gvfsm")]
+[node name="DarkLightThemeChanger" parent="." unique_id=386370308 groups=["HideChildrenExempt"] instance=ExtResource("4_gvfsm")]
 darkTheme = ExtResource("1_30sqi")
 lightTheme = ExtResource("5_23jqw")
 

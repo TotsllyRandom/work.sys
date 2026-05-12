@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwdr5smh12a0v" path="res://Scripts/content.gd" id="1_fy1iq"]
 [ext_resource type="Script" uid="uid://bivegnrrl7wcv" path="res://Scripts/App Scripts/settings.gd" id="2_wcxcf"]
+[ext_resource type="Script" uid="uid://h0mr1h8i8k0c" path="res://Scripts/App Scripts/QLAccountManager.gd" id="3_wcxcf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3b8r"]
 bg_color = Color(0.53669757, 0, 0.000973637, 1)
@@ -151,19 +152,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_wcxcf")
 
 [node name="Top Buttons" type="Control" parent="Quickloans - Account Manager" unique_id=112746823]
 layout_mode = 1
-anchor_right = 1.0
-anchor_bottom = 0.16129032
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = 6.0
+anchor_left = 0.0125
+anchor_top = 0.019354839
+anchor_right = 0.9875
+anchor_bottom = 0.14193548
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=721852312]
+[node name="home" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=721852312]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.33333334
@@ -172,7 +172,7 @@ grow_vertical = 2
 text = "Home"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=1103917856]
+[node name="stats" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=1103917856]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6666667
@@ -182,7 +182,7 @@ grow_horizontal = 0
 text = "Statistics"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=27518316]
+[node name="rules" type="Button" parent="Quickloans - Account Manager/Top Buttons" unique_id=27518316]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.33333334
@@ -191,6 +191,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 text = "Rules"
 metadata/_edit_use_anchors_ = true
+
+[node name="Home" type="Control" parent="Quickloans - Account Manager" unique_id=554841953]
+anchors_preset = 0
+anchor_left = 0.0125
+anchor_top = 0.16129032
+anchor_right = 0.9875
+anchor_bottom = 0.9806452
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quickloans - Account Manager/Home" unique_id=437903827]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 19.0
+text = "Home Menu"
+
+[node name="Rules" type="Control" parent="Quickloans - Account Manager" unique_id=954442517]
+anchors_preset = 0
+anchor_left = 0.0125
+anchor_top = 0.16129032
+anchor_right = 0.9875
+anchor_bottom = 0.9806452
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quickloans - Account Manager/Rules" unique_id=581157317]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 19.0
+text = "Rules Menu"
+
+[node name="Stats" type="Control" parent="Quickloans - Account Manager" unique_id=1652446943]
+anchors_preset = 0
+anchor_left = 0.0125
+anchor_top = 0.16129032
+anchor_right = 0.9875
+anchor_bottom = 0.9806452
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Quickloans - Account Manager/Stats" unique_id=1504715840]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 19.0
+text = "Stats Menu"
 
 [node name="Quickloans - Loan Front" type="Control" parent="." unique_id=2025639367]
 layout_mode = 1
@@ -201,3 +243,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_pressed"]
+[connection signal="pressed" from="Quickloans - Account Manager/Top Buttons/home" to="Quickloans - Account Manager" method="_on_home_pressed"]
+[connection signal="pressed" from="Quickloans - Account Manager/Top Buttons/stats" to="Quickloans - Account Manager" method="_on_stats_pressed"]
+[connection signal="pressed" from="Quickloans - Account Manager/Top Buttons/rules" to="Quickloans - Account Manager" method="_on_rules_pressed"]
