@@ -249,6 +249,28 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="inGame" type="Control" parent="Quickloans - Loan Front" unique_id=171103487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Quickloans - Loan Front/inGame" unique_id=1056761702]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ClockIn" type="Control" parent="Quickloans - Loan Front" unique_id=475697587]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="Settings/VBoxContainer/DarkModeSettings/Button" to="Settings" method="_on_button_pressed"]
 [connection signal="pressed" from="Quickloans - Account Manager/Top Buttons/home" to="Quickloans - Account Manager" method="_on_home_pressed"]
 [connection signal="pressed" from="Quickloans - Account Manager/Top Buttons/stats" to="Quickloans - Account Manager" method="_on_stats_pressed"]

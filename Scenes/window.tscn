@@ -7,75 +7,35 @@
 [ext_resource type="PackedScene" uid="uid://by8ecrwrlyxc4" path="res://Scenes/Script Executors/DarkLight Theme Changer.tscn" id="4_gvfsm"]
 [ext_resource type="Theme" uid="uid://c50ufar0nc40f" path="res://Mods/Themes/BarLight.tres" id="5_23jqw"]
 
-[node name="Window" type="Control" unique_id=1803496059 groups=["window"]]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Window" type="Window" unique_id=1346550735 groups=["window"]]
+oversampling_override = 1.0
+title = "Page Title"
+position = Vector2i(126, 54)
+size = Vector2i(900, 540)
+extend_to_title = true
+min_size = Vector2i(200, 140)
+keep_title_visible = true
 theme = ExtResource("1_30sqi")
+theme_override_icons/close = ExtResource("3_0slyu")
 script = ExtResource("1_efths")
 metadata/_edit_group_ = true
 
 [node name="Content" parent="." unique_id=219593269 instance=ExtResource("2_30sqi")]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 34.0
+offset_top = 0.0
 offset_right = 0.0
-offset_bottom = 34.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DarkLightThemeChanger" parent="Content" unique_id=1965601300 groups=["HideChildrenExempt"] instance=ExtResource("4_gvfsm")]
+[node name="DarkLightThemeChanger" parent="Content" unique_id=1965601300 instance=ExtResource("4_gvfsm")]
 darkTheme = ExtResource("1_30sqi")
 lightTheme = ExtResource("5_23jqw")
 
-[node name="TopBar" type="Panel" parent="." unique_id=242941655]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="CloseButton" type="Button" parent="TopBar" unique_id=245972395]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -35.000244
-offset_top = -15.0
-offset_right = 0.99975586
-offset_bottom = 21.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.833, 0.833)
-focus_mode = 0
-icon = ExtResource("3_0slyu")
-flat = true
-
-[node name="Title" type="Label" parent="TopBar" unique_id=1714969377]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_right = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Page Title"
-vertical_alignment = 1
-
-[node name="DarkLightThemeChanger" parent="." unique_id=386370308 groups=["HideChildrenExempt"] instance=ExtResource("4_gvfsm")]
+[node name="DarkLightThemeChanger" parent="." unique_id=386370308 instance=ExtResource("4_gvfsm")]
 darkTheme = ExtResource("1_30sqi")
 lightTheme = ExtResource("5_23jqw")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="TopBar" to="." method="_on_top_bar_mouse_entered"]
-[connection signal="mouse_exited" from="TopBar" to="." method="_on_top_bar_mouse_exited"]
-[connection signal="pressed" from="TopBar/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

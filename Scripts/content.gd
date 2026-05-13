@@ -20,11 +20,8 @@ func has_child_named(name: String) -> bool:
 			return true
 	return false
 
-func build_app(id: String):
-	if !(GlobalTab.APP_NAMES.has(id)):
-		id = "Error"
-	hide_children(id)
-	
+func find_size():
+	var id = get_parent().APP_ID
 	match id:
 		"Settings":
 			window_x = 900
@@ -42,6 +39,12 @@ func build_app(id: String):
 			window_x = 500
 			window_y = 300
 			has_close_button = false
+
+func build_app(id: String):
+	if !(GlobalTab.APP_NAMES.has(id)):
+		id = "Error"
+	hide_children(id)
+	find_size()
 	get_parent().make_tab()
 
 func hide_children(keep):
