@@ -1,12 +1,8 @@
 extends Window
 
-@export var border_size = float(GlobalSettings.window_border_size)
 @export var tab_id: int
-@export var on_window: bool
-@export var on_bar: bool
 @export var APP_ID: String
 @export var ID: int
-@export var layer: int
 
 @onready var current_scale = GlobalTab.tab_scale
 

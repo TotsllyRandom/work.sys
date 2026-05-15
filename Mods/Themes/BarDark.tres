@@ -13,10 +13,6 @@ corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2fv3"]
 bg_color = Color(0.1254902, 0.13725491, 0.14901961, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
 border_color = Color(0, 0, 0, 1)
 
 [resource]
@@ -34,3 +30,5 @@ Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/constants/outline_size = 1
 Label/font_sizes/font_size = 22
 Panel/styles/panel = SubResource("StyleBoxFlat_m2fv3")
+Window/font_sizes/title_font_size = 24
+Window/fonts/title_font = ExtResource("1_kovxu")
